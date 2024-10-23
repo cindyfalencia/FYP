@@ -1,9 +1,10 @@
+// layout.tsx (still a Server Component)
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import type { PropsWithChildren } from "react";
-import { Header } from "./components/Header";
 import "./globals.css";
+import ClientLayout from "./components/ClientLayout"; // New Client Component
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +15,9 @@ const description =
 export const metadata: Metadata = {
   title: siteName,
   description,
-  metadataBase: process.env.NEXT_PUBLIC_SITE_URL ? new URL(process.env.NEXT_PUBLIC_SITE_URL) : undefined,
+  metadataBase: process.env.NEXT_PUBLIC_SITE_URL
+    ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
+    : undefined,
   openGraph: {
     title: siteName,
     description,
@@ -45,11 +48,7 @@ export default function Layout({ modal, children }: Props) {
           "has-[dialog[open]]:overflow-hidden",
         ].join(" ")}
       >
-        <div className="flex justify-between flex-col min-h-screen text-gray-100">
-          <Header />
-          <main className="p-6 text-gray-200 flex-1 h-full">{children}</main>
-        </div>
-        {modal}
+        <ClientLayout modal={modal}>{children}</ClientLayout> {/* Use Client Component */}
         {process.env.GA_ID && <GoogleAnalytics gaId={process.env.GA_ID} />}
       </body>
     </html>

@@ -1,10 +1,6 @@
-import HomeContent from "./components/HomeContent";
-import Link from "next/link";
+// app/page.tsx
+import { redirect } from 'next/navigation';
 
-export default function Page() {
-  return (
-      <div>
-        <HomeContent/>
-      </div>
-  )
+export default function Home() {
+  redirect('/welcome'); // Redirect to the welcome page
 }
