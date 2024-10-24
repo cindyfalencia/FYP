@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Dummy data for chat list
 const chats = [
   { id: 1, name: "Chat with AI 1", lastMessage: "How's it going?" },
   { id: 2, name: "Chat with AI 2", lastMessage: "Tell me a joke" },

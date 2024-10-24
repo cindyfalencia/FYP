@@ -8,8 +8,7 @@ export default function SignInPage() {
 
   const handleSignIn = (event: React.FormEvent) => {
     event.preventDefault();
-    // Here you would typically handle actual authentication
-    router.push('/chat'); // Navigate to the chat page after successful sign-in
+    router.push('/chat');
   };
 
   return (
