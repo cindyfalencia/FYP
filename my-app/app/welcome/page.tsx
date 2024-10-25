@@ -19,7 +19,7 @@ export default function WelcomePage(){
             <p className="text-lg mb-5">Your personal AI companion awaits.</p>
             <Link
                 className="mt-1 flex w-[200px] items-center justify-center rounded-md bg-blue-500 p-2 font-semibold hover:bg-blue-700"
-                href="/signin"
+                href="/login"
             >
                 Start Chatting
             </Link>
