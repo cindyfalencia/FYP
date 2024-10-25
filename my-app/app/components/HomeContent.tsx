@@ -1,6 +1,6 @@
 const HomeContent = () => {
   return (
-    <div className="flex flex-col items-center justify-between py-4 max-w-screen min-h-[90vh] overflow-y-hidden ">
+    <div className="flex flex-col items-center justify-between py-4 max-w-screen overflow-y-hidden ">
       <div className="mt-20">
         <h1 className="text-[#565869] text-4xl font-bold">FYP</h1>
       </div>

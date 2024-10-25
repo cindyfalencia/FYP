@@ -8,9 +8,13 @@ const chats = [
   { id: 5, name: "Chat with AI 5", lastMessage: "Explain deep learning" },
 ];
 
-export function Sidebar() {
+type SidebarProps = {
+  className?: string;
+};
+
+export function Sidebar({ className = "" }: Readonly<SidebarProps>){
   return (
-    <aside className="w-64 bg-gray-900 p-4 h-50vh">
+    <aside className={`bg-gray-900 p-4 ${className}`}>
       <h2 className="text-white text-lg mb-4">Chats</h2>
       <ul className="space-y-4">
         {chats.map(chat => (
