@@ -1,16 +1,15 @@
 "use client";
-
 import { usePathname } from "next/navigation"; // Client-side hook
 import { Header } from "./Header";
 import {Sidebar} from "./Sidebar";
 import { ChatInput } from './ChatInput';
+import { ReactNode } from "react"
 
 type ClientLayoutProps = {
-  children: React.ReactNode;
-  modal: React.ReactNode;
+  children: ReactNode;
 };
 
-export default function ClientLayout({ modal, children }: Readonly<ClientLayoutProps>) {
+export default function ClientLayout({children}: Readonly<ClientLayoutProps>) {
   const pathname = usePathname(); // Get current path
 
   // Determine if the current page is the welcome or sign-in page
@@ -26,7 +25,6 @@ export default function ClientLayout({ modal, children }: Readonly<ClientLayoutP
           {!isAuthPage && <ChatInput className="mt-auto"/>}
         </main>
       </div>
-      {modal}
     </div>
   );
 }

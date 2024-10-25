@@ -2,8 +2,11 @@
 
 import React from 'react';
 import {useRouter} from 'next/navigation';
+import { useTheme } from "next-themes"
+import Link from "next/link"
 
 export default function WelcomePage(){
+    const { theme } = useTheme()
     const router = useRouter();
 
     const handleGetStarted = () => {
@@ -11,12 +14,15 @@ export default function WelcomePage(){
     }
 
     return(
-        <div className="min-h-screen flex flex-col justify-center items-center bg-gray-800 text-white">
-            <h1 className="text-4xl font-bold mb-6">Welcome to Reimagined AI</h1>
-            <p className="text-lg mb-6">Your personal AI companion awaits.</p>
-            <button
-                className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
-                onClick={handleGetStarted}>Get Started</button>
+        <div className="flex size-full flex-col items-center justify-center">
+            <div className="mt-2 text-4xl font-bold">Welcome to Reimagined AI</div>
+            <p className="text-lg mb-5">Your personal AI companion awaits.</p>
+            <Link
+                className="mt-1 flex w-[200px] items-center justify-center rounded-md bg-blue-500 p-2 font-semibold hover:bg-blue-700"
+                href="/signin"
+            >
+                Start Chatting
+            </Link>
         </div>
     );
 }
