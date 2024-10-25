@@ -6,6 +6,12 @@ __pycache__/
 # C extensions
 *.so
 
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
 # Distribution / packaging
 .Python
 build/
