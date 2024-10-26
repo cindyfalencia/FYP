@@ -8,11 +8,6 @@ import Link from "next/link"
 export default function WelcomePage(){
     const { theme } = useTheme()
     const router = useRouter();
-
-    const handleGetStarted = () => {
-        router.push('/signin');
-    }
-
     return(
         <div className="flex size-full flex-col items-center justify-center">
             <div className="mt-2 text-4xl font-bold">Welcome to Reimagined AI</div>
